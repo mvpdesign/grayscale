@@ -7,7 +7,7 @@ class Grayscale_Image_Editor extends WP_Image_Editor_GD {
     public function make_grayscale(){
         // create a copy
         $dest = $this->image;
-        unset($this->image);
+        $this->image = null;
         $this->load();
         if ( is_resource( $dest ) ) {
             // Apply grayscale filter
